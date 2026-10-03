@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GENZA — Brand Presentation</title>
+<meta name="description" content="GENZA brand presentation. Dream.Hustle.Repeat. Founded in TN. Built by two." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000000;
+    --panel:#0A0A0A;
+    --white:#FFFFFF;
+    --gray:#A7A7A6;
+    --red:#D70000;
+    --line:rgba(255,255,255,.14);
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--white);
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .display{font-family:'Anton','Arial Narrow',Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:.92}
+  .eyebrow{
+    font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--gray);display:flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before{content:"";width:38px;height:2px;background:var(--red);display:block}
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 28px;backdrop-filter:blur(14px);
+    background:rgba(0,0,0,.55);border-bottom:1px solid transparent;
+    transition:.35s ease;
+  }
+  nav.solid{background:rgba(0,0,0,.92);border-bottom-color:var(--line)}
+  nav .brand{font-family:'Anton',sans-serif;font-size:20px;letter-spacing:.22em}
+  nav .links{display:flex;gap:26px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray)}
+  nav .links a{transition:.25s}
+  nav .links a:hover{color:var(--red)}
+  nav .cta{
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    border:1px solid var(--line);padding:9px 16px;border-radius:100px;transition:.25s;
+  }
+  nav .cta:hover{background:var(--red);border-color:var(--red);color:var(--white)}
+  @media(max-width:900px){nav .links{display:none}}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;position:relative;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:120px 24px 70px;
+    overflow:hidden;
+  }
+  .hero .glow{
+    position:absolute;width:min(78vw,760px);aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(215,0,0,.16),transparent 62%);
+    top:44%;left:50%;transform:translate(-50%,-50%);filter:blur(10px);
+  }
+  .hero .grid-bg{
+    position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:74px 74px;mask-image:radial-gradient(circle at 50% 45%,#000 10%,transparent 72%);
+    opacity:.5;
+  }
+  .hero-badge{
+    position:relative;width:clamp(150px,22vw,215px);aspect-ratio:1;border-radius:50%;
+    background:var(--white);display:grid;place-items:center;
+    box-shadow:0 30px 90px rgba(0,0,0,.8),0 0 0 1px var(--line);
+    animation:float 7s ease-in-out infinite;
+  }
+  .hero-badge img{width:76%}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .hero h1{
+    font-size:clamp(74px,17vw,230px);margin-top:34px;position:relative;
+    color:var(--white);letter-spacing:.06em;
+  }
+  .hero .tag{
+    margin-top:22px;font-family:'Space Grotesk',monospace;font-size:clamp(14px,2vw,19px);
+    letter-spacing:.3em;text-transform:uppercase;color:var(--gray);
+  }
+  .hero .tag b{color:var(--red);font-weight:500}
+  .hero .meta{
+    margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+    font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gray);
+  }
+  .hero .meta span{border:1px solid var(--line);border-radius:100px;padding:8px 15px}
+  .scrollcue{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+    font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gray);
+    display:flex;flex-direction:column;align-items:center;gap:9px;
+  }
+  .scrollcue i{display:block;width:1px;height:44px;background:linear-gradient(var(--red),transparent);animation:drop 1.8s infinite}
+  @keyframes drop{0%{opacity:0;transform:scaleY(.2)}50%{opacity:1}100%{opacity:0;transform:scaleY(1)}}
+
+  /* SECTIONS */
+  section{padding:110px 0;position:relative}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(40px,7vw,88px)}
+  .sec-head p{max-width:420px;color:var(--gray);font-size:15px;line-height:1.7;font-weight:300}
+
+  /* BRIEF */
+  .brief{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
+  .brief-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start}
+  .brief h2{font-size:clamp(34px,5vw,64px);margin-bottom:26px}
+  .brief p{color:var(--gray);line-height:1.85;font-size:16px;font-weight:300;margin-bottom:18px}
+  .brief p strong{color:var(--white);font-weight:600}
+  .facts{display:grid;gap:14px}
+  .fact{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:rgba(255,255,255,.03)}
+  .fact .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gray);margin-bottom:9px}
+  .fact .v{font-family:'Space Grotesk',monospace;font-size:17px;color:var(--white)}
+  .fact .v em{color:var(--red);font-style:normal}
+  @media(max-width:860px){.brief-grid{grid-template-columns:1fr;gap:40px}}
+
+  /* CARD GRID (logo + old identity) */
+  .logo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .duo{display:grid;grid-template-columns:1fr 1.9fr;gap:26px}
+  .card{
+    border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel);
+    transition:.4s cubic-bezier(.2,.7,.3,1);
+  }
+  .card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.4)}
+  .card .stage{aspect-ratio:16/11;display:grid;place-items:center;padding:44px;position:relative}
+  .card .stage img{max-height:100%;max-width:100%;width:auto;object-fit:contain;transition:.5s}
+  .card:hover .stage img{transform:scale(1.04)}
+  .stage.light{background:#FFFFFF}
+  .stage.dark{background:#000000}
+  .stage.wide{aspect-ratio:auto;padding:24px}
+  .stage.wide img{width:100%;object-fit:cover}
+  .card .cap{
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    padding:16px 22px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);
+  }
+  .card .cap .tag{font-family:'Space Grotesk',monospace;color:var(--gray);font-size:11px}
+  @media(max-width:900px){.duo{grid-template-columns:1fr}}
+  @media(max-width:760px){.logo-grid{grid-template-columns:1fr}}
+
+  /* MOCKUPS */
+  .mockups{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .mock{border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative;background:#111;aspect-ratio:3/4}
+  .mock img{width:100%;height:100%;object-fit:cover;transition:.7s cubic-bezier(.2,.7,.3,1)}
+  .mock:hover img{transform:scale(1.05)}
+  .mock .lbl{
+    position:absolute;left:16px;bottom:16px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);
+    border:1px solid var(--line);border-radius:100px;padding:9px 16px;
+    font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--white);
+  }
+  @media(max-width:860px){.mgrid{grid-template-columns:1fr}}
+
+  /* PALETTE */
+  .palette{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .swatch{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel);transition:.35s}
+  .swatch:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.4)}
+  .swatch .chip{height:130px;border-bottom:1px solid var(--line)}
+  .swatch .info{padding:18px 20px;display:grid;gap:7px}
+  .swatch .n{font-family:'Anton',sans-serif;font-size:18px;letter-spacing:.06em;text-transform:uppercase}
+  .swatch .row{font-family:'Space Grotesk',monospace;font-size:11.5px;color:var(--gray);display:flex;justify-content:space-between;gap:10px}
+  .swatch .row b{color:var(--white);font-weight:500}
+  @media(max-width:760px){.palette{grid-template-columns:repeat(2,1fr)}}
+
+  /* CTA / FOOTER */
+  .closing{text-align:center;padding:130px 0 90px;border-top:1px solid var(--line);background:radial-gradient(ellipse at 50% 0%,rgba(215,0,0,.14),transparent 60%)}
+  .closing h2{font-size:clamp(44px,10vw,140px);letter-spacing:.05em}
+  .closing h2 span{color:var(--red)}
+  .closing .sub{margin-top:22px;color:var(--gray);font-weight:300;font-size:16px;letter-spacing:.04em}
+  .closing .actions{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:100px;
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:.3s;border:1px solid var(--white);
+  }
+  .btn.solid{background:var(--red);border-color:var(--red);color:var(--white)}
+  .btn.solid:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(215,0,0,.35)}
+  .btn.ghost:hover{background:rgba(255,255,255,.1)}
+  footer{border-top:1px solid var(--line);padding:34px 0 46px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray)}
+  .credit{font-family:'Space Grotesk',monospace;font-size:clamp(15px,2.4vw,22px);letter-spacing:.14em;color:var(--white)}
+  .credit a{border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;transition:.3s}
+  .credit a:hover{color:var(--red);border-color:var(--red)}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.3,1)}
+  .rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="brand">GENZA</div>
+  <div class="links">
+    <a href="#brief">Brief</a>
+    <a href="#old">Old Identity</a>
+    <a href="#identity">Current Logo</a>
+    <a href="#work">In The Wild</a>
+    <a href="#palette">Palette</a>
+  </div>
+  <a class="cta" href="#work">View the work</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="hero-badge">
+    <img src="logo%20in%20blck%20wihtout%20backgound.png" alt="GENZA logo mark" />
+  </div>
+  <h1 class="display">GENZA</h1>
+  <div class="tag">Dream<b>.</b> Hustle<b>.</b> Repeat<b>.</b></div>
+  <div class="meta">
+    <span>Founded in TN</span>
+    <span>Built by two</span>
+    <span>Streetwear label</span>
+    <span>Brand presentation</span>
+  </div>
+  <div class="scrollcue"><span>Scroll</span><i></i></div>
+</header>
+
+<!-- BRIEF -->
+<section class="brief" id="brief">
+  <div class="wrap brief-grid">
+    <div class="rv">
+      <div class="eyebrow" style="margin-bottom:26px">01 — The brief</div>
+      <h2 class="display">A new mark<br/>for GENZA</h2>
+      <p>GENZA is a Tunisian streetwear label built by two — a small drop-driven brand with a bold voice: <strong>Dream. Hustle. Repeat.</strong> The work so far lives on Instagram, on tees, flags and pop-up spaces.</p>
+      <p>The ask: <strong>a new logo</strong> and a cleaner identity system — one mark that works small on a label, big on a flag, and everywhere in between.</p>
+      <p>This presentation gathers the full picture: where the brand started, the <strong>new logo system</strong>, and how it lives in the wild.</p>
+    </div>
+    <div class="facts rv">
+      <div class="fact"><div class="k">Client</div><div class="v">GENZA — @genza_2</div></div>
+      <div class="fact"><div class="k">Scope</div><div class="v">Logo redesign · brand presentation</div></div>
+      <div class="fact"><div class="k">Origin</div><div class="v">Founded in TN · Built by two</div></div>
+      <div class="fact"><div class="k">Delivered</div><div class="v">New logo system <em>+</em> 6 mockups</div></div>
+      <div class="fact"><div class="k">Prepared by</div><div class="v">wyrmstudios.com</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OLD IDENTITY -->
+<section id="old">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow" style="margin-bottom:22px">02 — Where it started</div>
+        <h2 class="display">The old<br/>identity</h2>
+      </div>
+      <p>The original mark that carried the first drop — the orbit badge leading the Instagram profile. It set the tone: circle, bold type, one strong idea.</p>
+    </div>
+
+    <div class="duo">
+      <div class="card rv">
+        <div class="stage light"><img src="old%20logo.jpg" alt="GENZA old logo" style="max-width:70%" /></div>
+        <div class="cap"><span>Before — The original mark</span><span class="tag">JPG</span></div>
+      </div>
+      <div class="card rv">
+        <div class="stage wide"><img src="old%20sytem%20(%20juste%20a%20sreen%20shot%20from%20insta%20for%20his%20profile.png" alt="GENZA Instagram profile — old identity" /></div>
+        <div class="cap"><span>Before — Instagram profile</span><span class="tag">@genza_2</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT IDENTITY -->
+<section class="mockups" id="identity">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow" style="margin-bottom:22px">03 — The new identity</div>
+        <h2 class="display">The current<br/>logo system</h2>
+      </div>
+      <p>Four production files: black and white cut-outs, plus each on its solid background — ready for print, apparel and screens.</p>
+    </div>
+
+    <div class="logo-grid">
+      <div class="card rv">
+        <div class="stage light"><img src="logo%20in%20blck%20wihtout%20backgound.png" alt="GENZA black logo, transparent background" /></div>
+        <div class="cap"><span>Black cut-out</span><span class="tag">PNG · transparent</span></div>
+      </div>
+      <div class="card rv">
+        <div class="stage dark"><img src="logo%20in%20white%20wihtout%20backgound.png" alt="GENZA white logo, transparent background" /></div>
+        <div class="cap"><span>White cut-out</span><span class="tag">PNG · transparent</span></div>
+      </div>
+      <div class="card rv">
+        <div class="stage light"><img src="logo%20in%20white%20backgound.jpg" alt="GENZA logo on white background" /></div>
+        <div class="cap"><span>Primary on white</span><span class="tag">JPG · 1566²</span></div>
+      </div>
+      <div class="card rv">
+        <div class="stage dark"><img src="logo%20on%20black%20backgound.jpg" alt="GENZA logo on black background" /></div>
+        <div class="cap"><span>Primary on black</span><span class="tag">JPG · 1566²</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUPS -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow" style="margin-bottom:22px">04 — In the wild</div>
+        <h2 class="display">Where the<br/>brand lives</h2>
+      </div>
+      <p>Six pieces from the world of DROP 1: vests, hoodies, the woven label, print and the retail floor. Any mark has to survive here first — small on a chest, huge on a wall.</p>
+    </div>
+    <div class="mgrid">
+      <div class="mock rv"><img src="mockup%20one.png" alt="GENZA vest mockup" loading="lazy"><span class="lbl">Apparel — Vest</span></div>
+      <div class="mock rv"><img src="mockup%20two.png" alt="GENZA hoodie mockup" loading="lazy"><span class="lbl">Apparel — Hoodie</span></div>
+      <div class="mock rv"><img src="mockup3.png" alt="GENZA tee in retail" loading="lazy"><span class="lbl">In the wild — Retail</span></div>
+      <div class="mock rv"><img src="mockup%204.png" alt="GENZA hoodie on model" loading="lazy"><span class="lbl">Apparel — Hoodie 02</span></div>
+      <div class="mock rv"><img src="mockup%205.jpg" alt="GENZA woven label" loading="lazy"><span class="lbl">Detail — Woven label</span></div>
+      <div class="mock rv"><img src="mockup6.jpg" alt="GENZA poster" loading="lazy"><span class="lbl">Print — Poster</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE -->
+<section class="mockups" id="palette">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow" style="margin-bottom:22px">05 — Colour palette</div>
+        <h2 class="display">Four colours,<br/>one voice</h2>
+      </div>
+      <p>Red leads, black and white carry everything else, and grey keeps it grounded. Print-ready specs for every colour.</p>
+    </div>
+
+    <div class="palette">
+      <div class="swatch rv">
+        <div class="chip" style="background:#D70000"></div>
+        <div class="info">
+          <div class="n">Red</div>
+          <div class="row"><span>HEX</span><b>#D70000</b></div>
+          <div class="row"><span>RGB</span><b>215, 0, 0</b></div>
+          <div class="row"><span>CMYK</span><b>9, 100, 100, 2</b></div>
+          <div class="row"><span>Pantone</span><b>2035 C</b></div>
+        </div>
+      </div>
+      <div class="swatch rv">
+        <div class="chip" style="background:#000000"></div>
+        <div class="info">
+          <div class="n">Black</div>
+          <div class="row"><span>HEX</span><b>#000000</b></div>
+          <div class="row"><span>RGB</span><b>0, 0, 0</b></div>
+          <div class="row"><span>CMYK</span><b>0, 0, 0, 100</b></div>
+          <div class="row"><span>Pantone</span><b>—</b></div>
+        </div>
+      </div>
+      <div class="swatch rv">
+        <div class="chip" style="background:#FFFFFF"></div>
+        <div class="info">
+          <div class="n">White</div>
+          <div class="row"><span>HEX</span><b>#FFFFFF</b></div>
+          <div class="row"><span>RGB</span><b>255, 255, 255</b></div>
+          <div class="row"><span>CMYK</span><b>0, 0, 0, 0</b></div>
+          <div class="row"><span>Pantone</span><b>—</b></div>
+        </div>
+      </div>
+      <div class="swatch rv">
+        <div class="chip" style="background:#A7A7A6"></div>
+        <div class="info">
+          <div class="n">Gray</div>
+          <div class="row"><span>HEX</span><b>#A7A7A6</b></div>
+          <div class="row"><span>RGB</span><b>167, 167, 166</b></div>
+          <div class="row"><span>CMYK</span><b>37, 29, 31, 0</b></div>
+          <div class="row"><span>Pantone</span><b>—</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:30px">06 — Next step</div>
+      <h2 class="display">Dream<span>.</span><br/>Hustle<span>.</span><br/>Repeat<span>.</span></h2>
+      <p class="sub">The new GENZA identity — ready for the next drop.</p>
+      <div class="actions">
+        <a class="btn solid" href="https://instagram.com/genza_2/" target="_blank" rel="noopener">See @genza_2</a>
+        <a class="btn ghost" href="#top">Back to top</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© GENZA — Brand presentation · 2026</span>
+    <span class="credit">Made by <a href="https://wyrmstudios.com" target="_blank" rel="noopener">wyrmstudios.com</a></span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 40));
+  const io = new IntersectionObserver((es) => es.forEach(e => e.isIntersecting && e.target.classList.add('in')), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
