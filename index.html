@@ -159,6 +159,20 @@
   }
   @media(max-width:860px){.mgrid{grid-template-columns:1fr}}
 
+  /* VEST DESIGN */
+  .vest-hero{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-bottom:24px}
+  .vest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .vshot{border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative;background:#111;aspect-ratio:1}
+  .vshot img{width:100%;height:100%;object-fit:cover;transition:.7s cubic-bezier(.2,.7,.3,1)}
+  .vshot:hover img{transform:scale(1.05)}
+  .vshot .lbl{
+    position:absolute;left:14px;bottom:14px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);
+    border:1px solid var(--line);border-radius:100px;padding:8px 14px;
+    font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--white);white-space:nowrap;
+  }
+  .vshot.feature{aspect-ratio:3/4}
+  @media(max-width:980px){.vest-hero{grid-template-columns:1fr 1fr}.vest-hero .feature{grid-column:1/-1;max-height:640px}.vest-grid{grid-template-columns:repeat(2,1fr)}}
+
   /* PALETTE */
   .palette{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .swatch{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel);transition:.35s}
@@ -199,13 +213,13 @@
 <nav id="nav">
   <div class="brand">GENZA</div>
   <div class="links">
-    <a href="#brief">Brief</a>
+    <a href="#vest">Vest Design</a>
     <a href="#old">Old Identity</a>
     <a href="#identity">Current Logo</a>
     <a href="#work">In The Wild</a>
     <a href="#palette">Palette</a>
   </div>
-  <a class="cta" href="#work">View the work</a>
+  <a class="cta" href="#vest">Vest design</a>
 </nav>
 
 <!-- HERO -->
@@ -232,16 +246,42 @@
     <div class="rv">
       <div class="eyebrow" style="margin-bottom:26px">01 — The brief</div>
       <h2 class="display">A new mark<br/>for GENZA</h2>
-      <p>GENZA is a Tunisian streetwear label built by two — a small drop-driven brand with a bold voice: <strong>Dream. Hustle. Repeat.</strong> The work so far lives on Instagram, on tees, flags and pop-up spaces.</p>
+      <p>GENZA is a Tunisian streetwear label built by two — a small drop-driven brand with a bold voice: <strong>Dream. Hustle. Repeat.</strong> The work so far lives on Instagram, on tees, hoodies and pop-up spaces.</p>
       <p>The ask: <strong>a new logo</strong> and a cleaner identity system — one mark that works small on a label, big on a flag, and everywhere in between.</p>
-      <p>This presentation gathers the full picture: where the brand started, the <strong>new logo system</strong>, and how it lives in the wild.</p>
+      <p>This presentation gathers the full picture: the <strong>new vest design</strong>, where the brand started, the <strong>new logo system</strong>, and how it lives in the wild.</p>
     </div>
     <div class="facts rv">
       <div class="fact"><div class="k">Client</div><div class="v">GENZA — @genza_2</div></div>
       <div class="fact"><div class="k">Scope</div><div class="v">Logo redesign · brand presentation</div></div>
       <div class="fact"><div class="k">Origin</div><div class="v">Founded in TN · Built by two</div></div>
-      <div class="fact"><div class="k">Delivered</div><div class="v">New logo system <em>+</em> 6 mockups</div></div>
+      <div class="fact"><div class="k">Delivered</div><div class="v">Logo system <em>+</em> vest design <em>+</em> 6 mockups</div></div>
       <div class="fact"><div class="k">Prepared by</div><div class="v">wyrmstudios.com</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VEST DESIGN -->
+<section id="vest">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow" style="margin-bottom:22px">02 — Latest piece</div>
+        <h2 class="display">The vest<br/>design</h2>
+      </div>
+      <p>The new navy zipped hoodie — embroidered chest script, orange woven tab on the hand, and four back-print directions to choose from.</p>
+    </div>
+
+    <div class="vest-hero">
+      <div class="vshot feature rv"><img src="tshirt%20design/showcase%20of%20the%20veste/front%20view.jpg" alt="GENZA vest front view"><span class="lbl">Front view</span></div>
+      <div class="vshot rv"><img src="tshirt%20design/showcase%20of%20the%20veste/zoom%20in%20front%20view.jpg" alt="GENZA vest chest detail"><span class="lbl">Chest detail</span></div>
+      <div class="vshot rv"><img src="tshirt%20design/showcase%20of%20the%20veste/hand%20view.jpg" alt="GENZA vest hand tab"><span class="lbl">Hand — woven tab</span></div>
+    </div>
+
+    <div class="vest-grid">
+      <div class="vshot rv"><img src="tshirt%20design/showcase%20of%20the%20veste/back%20design%20option%201.jpg" alt="GENZA vest back design option 1" loading="lazy"><span class="lbl">Back — Option 1</span></div>
+      <div class="vshot rv"><img src="tshirt%20design/showcase%20of%20the%20veste/back%20design%20option%202.jpg" alt="GENZA vest back design option 2" loading="lazy"><span class="lbl">Back — Option 2</span></div>
+      <div class="vshot rv"><img src="tshirt%20design/showcase%20of%20the%20veste/back%20design%20option%203.jpg" alt="GENZA vest back design option 3" loading="lazy"><span class="lbl">Back — Option 3</span></div>
+      <div class="vshot rv"><img src="tshirt%20design/showcase%20of%20the%20veste/back%20design%20option%204.jpg" alt="GENZA vest back design option 4" loading="lazy"><span class="lbl">Back — Option 4</span></div>
     </div>
   </div>
 </section>
@@ -251,7 +291,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="eyebrow" style="margin-bottom:22px">02 — Where it started</div>
+        <div class="eyebrow" style="margin-bottom:22px">03 — Where it started</div>
         <h2 class="display">The old<br/>identity</h2>
       </div>
       <p>The original mark that carried the first drop — the orbit badge leading the Instagram profile. It set the tone: circle, bold type, one strong idea.</p>
@@ -275,10 +315,10 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="eyebrow" style="margin-bottom:22px">03 — The new identity</div>
+        <div class="eyebrow" style="margin-bottom:22px">04 — The new identity</div>
         <h2 class="display">The current<br/>logo system</h2>
       </div>
-      <p>Four production files: black and white cut-outs, plus each on its solid background — ready for print, apparel and screens.</p>
+      <p>Production files of the new mark: black and white cut-outs, each on its solid background, and the wordmark lockup — ready for print, apparel and screens.</p>
     </div>
 
     <div class="logo-grid">
@@ -298,6 +338,10 @@
         <div class="stage dark"><img src="logo%20on%20black%20backgound.jpg" alt="GENZA logo on black background" /></div>
         <div class="cap"><span>Primary on black</span><span class="tag">JPG · 1566²</span></div>
       </div>
+      <div class="card rv" style="grid-column:1/-1">
+        <div class="stage light wide"><img src="option%201/Untitled-1.jpg" alt="GENZA wordmark lockup" /></div>
+        <div class="cap"><span>Wordmark lockup</span><span class="tag">JPG · with ®</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -307,7 +351,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="eyebrow" style="margin-bottom:22px">04 — In the wild</div>
+        <div class="eyebrow" style="margin-bottom:22px">05 — In the wild</div>
         <h2 class="display">Where the<br/>brand lives</h2>
       </div>
       <p>Six pieces from the world of DROP 1: vests, hoodies, the woven label, print and the retail floor. Any mark has to survive here first — small on a chest, huge on a wall.</p>
@@ -328,7 +372,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="eyebrow" style="margin-bottom:22px">05 — Colour palette</div>
+        <div class="eyebrow" style="margin-bottom:22px">06 — Colour palette</div>
         <h2 class="display">Four colours,<br/>one voice</h2>
       </div>
       <p>Red leads, black and white carry everything else, and grey keeps it grounded. Print-ready specs for every colour.</p>
@@ -383,7 +427,7 @@
 <section class="closing">
   <div class="wrap">
     <div class="rv">
-      <div class="eyebrow" style="justify-content:center;margin-bottom:30px">06 — Next step</div>
+      <div class="eyebrow" style="justify-content:center;margin-bottom:30px">07 — Next step</div>
       <h2 class="display">Dream<span>.</span><br/>Hustle<span>.</span><br/>Repeat<span>.</span></h2>
       <p class="sub">The new GENZA identity — ready for the next drop.</p>
       <div class="actions">
